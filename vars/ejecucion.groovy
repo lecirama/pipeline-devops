@@ -16,7 +16,8 @@ def call(){
 	                script{
 	                   //Invocacion al archivo dependiendo del paramentro generado
 	                    env.STG_NAME=''
-	                    def build=(params.eleccion == 'Gradle') ? 'gradle.groovy' : 'maven.groovy'
+	                    //def build=(params.eleccion == 'Gradle') ? 'gradle.groovy' : 'maven.groovy'
+	                    ejecucion=(params.eleccion == 'Gradle') ? 'gradle.groovy' : 'maven.groovy'
 	                    //def ejecucion = load build
 	                    ejecucion.call()
 	                 }

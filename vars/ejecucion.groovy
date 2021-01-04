@@ -14,12 +14,19 @@ def call(){
 	        stage('Pipeline') {
 	            steps {
 	                script{
+	                	println 'Herramienta de Ejecución seleccionada: '+ params.eleccion
+	                	"${params.eleccion}".call()
+	                	if  (params.eleccion == 'Gradle'){
+	                		gradle.call()
+	                	} else {
+	                		maven.call()
+	                	}
 	                   //Invocacion al archivo dependiendo del paramentro generado
-	                    env.STG_NAME=''
+	                   // env.STG_NAME=''
 	                    //def build=(params.eleccion == 'Gradle') ? 'gradle.groovy' : 'maven.groovy'
-	                    def ejecucion=(params.eleccion == 'Gradle') ? 'gradle.groovy' : 'maven.groovy'
+	                    //def ejecucion=(params.eleccion == 'Gradle') ? 'gradle.groovy' : 'maven.groovy'
 	                    //def ejecucion = load build
-	                    ejecucion.call()
+	                    //ejecucion.call()
 	                 }
 	            }
 	        }

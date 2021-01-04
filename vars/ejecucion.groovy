@@ -11,7 +11,7 @@ def call(){
 	            choice(name: 'eleccion', choices: ['Gradle', 'Maven'], description: 'Herramientas de Construcción')
 	        }
 	    stages {
-	        stage('Pineline') {
+	        stage('Pipeline') {
 	            steps {
 	                script{
 	                   //Invocacion al archivo dependiendo del paramentro generado

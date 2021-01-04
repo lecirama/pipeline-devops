@@ -5,12 +5,12 @@
 */
 def call(){
     switch(env.Stage){
-        case "Compile"
+        case "Compile":
             stage('Compile') {
             sh './mvnw clean compile -e'       
             } 
         break  
-        case "Unit"
+        case "Unit":
             stage('Unit') {
             sh './mvnw clean test -e'     
              }
@@ -38,7 +38,7 @@ def call(){
             sh 'curl -X GET http://localhost:8086/rest/mscovid/test?msg=testing'
             }   
         break
-        case "Nexu":
+        case "Nexus":
             stage('Upload Nexus'){
             nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'test-nexus', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: 'jar', filePath: '/Users/maricelrodriguez/.jenkins/workspace/ultib_gradle_feature-dir-inicial/build/libs/DevOpsUsach2020-0.0.1.jar']], mavenCoordinate: [artifactId: 'DevOpsUsach2020', groupId: 'com.devopsusach2020', packaging: 'jar', version: '1.0.0']]]
              }

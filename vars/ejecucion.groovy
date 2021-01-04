@@ -16,7 +16,7 @@ def call(){
 	                script{
 	                	println 'Herramienta de Ejecución seleccionada: '+ params.eleccion
 	                	//"${params.eleccion.call()}"
-	                	if (param.eleccion == 'gradle'){
+	                	if (params.eleccion == 'gradle'){
 	                		gradle.call()
 	                	} else {
 	                		maven.call()

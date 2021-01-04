@@ -16,7 +16,7 @@ def call(){
             env.STG_NAME = 'Jar_Code'
             sh './mvnw clean package -e'
         }
-    	stage('SonarQube') {
+    	stage('Sonar') {
             env.STG_NAME = 'SonarQube_Code'
             withSonarQubeEnv('sonar') { // You can override the credential to be used
             sh './mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'

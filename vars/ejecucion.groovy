@@ -9,7 +9,9 @@ def call(){
 	    agent any
 	        parameters {
 	            choice(name: 'eleccion', choices: ['gradle', 'maven'], description: 'Herramientas de Construcción')
-	            string(name: 'stage', defaultValue:'', description: 'Valor Stage')
+	            //string(name: 'stage', defaultValue:'', description: 'Valor Stage')
+				string(name: 'Stage', defaultValue: '', description: 'Selección de stage Opciones para Gradle: build & Test; sonar; run; rest; Upload Nexus; Opciones para Maven: Compile; Unit; Jar; Sonar; Sonar; Test')
+
 	        }
 	    stages {
 	        stage('Pipeline') {

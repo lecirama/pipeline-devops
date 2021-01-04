@@ -4,11 +4,11 @@
 	ejecucion.call()
 */
 def call(){
-    stage('build & Test'){
+    stage('Build&Test'){
        // env.STG_NAME = 'build & test'
         sh './gradlew clean build'
     }
-    stage('sonar'){
+    stage('Sonar'){
         //env.STG_NAME = 'sonar'
         def scannerHome = tool 'sonar';
         withSonarQubeEnv('sonar'){
@@ -22,8 +22,8 @@ def call(){
     }
     stage('Rest'){
         env.STG_NAME = 'rest'
-        sh "curl http://localhost:8086/rest/mscovid/test?msg=testing"
-        sleep(5)
+        sleep (15)
+        sh 'curl -X GET http://localhost:8086/rest/mscovid/test?msg=testing'
     }
     stage('Upload Nexus'){
         env.STG_NAME = 'UploadNexus'

@@ -11,13 +11,13 @@ def call(){
 	            choice(name: 'eleccion', choices: ['gradle', 'maven'], description: 'Herramientas de Construcción')
 	            //string(name: 'stage', defaultValue:'', description: 'Valor Stage')
 				string(name: 'Stage', defaultValue: '', description: 'Selección de stage Opciones para Gradle: Build; Sonar; Run; Rest; Nexus; Opciones para Maven: Compile; Unit; Jar; Sonar; Test')
-	
+			}
 	    stages {
 	        stage('Pipeline') {
 	            steps {
 	                script{
 	                	println 'Herramienta de Ejecución seleccionada: '+ params.eleccion
-	                	println 'stage seleccionado: '+ params.Stage
+	                	//println 'stage seleccionado: '+ params.Stage
 	                	if (params.eleccion == 'gradle'){
 	                		gradle.call()
 	                	} else {
@@ -30,5 +30,4 @@ def call(){
 	    }
 	}
  }
-}
 return this;

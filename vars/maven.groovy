@@ -27,18 +27,18 @@ def call(){
             }
             }   
         break
-        case CASE_NAME:
+        case "Run":
             stage('Run_Jar') {
             sh 'nohup ./mvnw spring-boot:run &'
             }     
         break
-        case CASE_NAME:
+        case "Test":
             stage('Testing_App') {
             sleep 20
             sh 'curl -X GET http://localhost:8086/rest/mscovid/test?msg=testing'
             }   
         break
-        case CASE_NAME:
+        case "Nexu":
             stage('Upload Nexus'){
             nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'test-nexus', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: 'jar', filePath: '/Users/maricelrodriguez/.jenkins/workspace/ultib_gradle_feature-dir-inicial/build/libs/DevOpsUsach2020-0.0.1.jar']], mavenCoordinate: [artifactId: 'DevOpsUsach2020', groupId: 'com.devopsusach2020', packaging: 'jar', version: '1.0.0']]]
              }

@@ -15,7 +15,7 @@ def call(){
 	            steps {
 	                script{
 	                	println 'Herramienta de Ejecución seleccionada: '+ params.eleccion
-	                	"${params.eleccion}".call()
+	                	//"${params.eleccion.call()}"
 	                	if (param.eleccion == 'gradle'){
 	                		gradle.call()
 	                	} else {

@@ -5,11 +5,11 @@
 */
 def call(){
     stage('build & Test'){
-        env.STG_NAME = 'build & test'
+       // env.STG_NAME = 'build & test'
         sh './gradlew clean build'
     }
     stage('sonar'){
-        env.STG_NAME = 'sonar'
+        //env.STG_NAME = 'sonar'
         def scannerHome = tool 'sonar';
         withSonarQubeEnv('sonar'){
         sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
@@ -20,7 +20,7 @@ def call(){
         sh "nohup bash gradlew bootRun &"
         sleep(10)
     }
-    stage('rest'){
+    stage('Rest'){
         env.STG_NAME = 'rest'
         sh "curl http://localhost:8086/rest/mscovid/test?msg=testing"
         sleep(5)

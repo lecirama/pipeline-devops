@@ -18,10 +18,10 @@ def call(){
 	            steps {
 	                script{
 	                	println 'Herramienta de Ejecución seleccionada: '+ params.eleccion
-	                	println 'stage seleccionado: '+ params.Stage
+	                	//println 'stage seleccionado: '+ params.Stage
 	                	//"${params.eleccion.call()}"
 	                	if (params.eleccion == 'gradle'){
-	                		gradle.call(params.Stage)
+	                		gradle.call()
 	                	} else {
 	                		maven.call()
 	                	}
@@ -45,5 +45,4 @@ def call(){
 	    }*/
 	}
  }
-
 return this;

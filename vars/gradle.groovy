@@ -6,7 +6,7 @@
 
 //import ejecucion
 def call(){
-    switch (params.Stage){
+    switch(env.Stage){
         case "Build":
             stage('Build'){
             sh './gradlew clean build'

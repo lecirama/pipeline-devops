@@ -30,5 +30,4 @@ def call(){
 	    }
 	}
  }
-}
 return this;

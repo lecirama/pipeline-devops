@@ -21,7 +21,7 @@ def call(){
 	                	println 'stage seleccionado: '+ params.Stage
 	                	//"${params.eleccion.call()}"
 	                	if (params.eleccion == 'gradle'){
-	                		gradle.call()
+	                		gradle.call(params.Stage)
 	                	} else {
 	                		maven.call()
 	                	}
@@ -35,14 +35,14 @@ def call(){
 	            }
 	        }
 	    }
-	    post{
+	    /*post{
 	        success{
 	            slackSend color: 'good', message: "Build Success: [Maricel Rodriguez][${env.STG_NAME}][${params.eleccion}] Ejecución exitosa.", teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'slack-token'
 	        }
 	        failure{
 	            slackSend color: 'danger', message: "Build Failure: [Maricel Rodriguez][${env.STG_NAME}][${params.eleccion}] Ejecución fallida en stage [${env.STG_NAME}].", teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'slack-token'
 	         }
-	    }
+	    }*/
 	}
  }
 

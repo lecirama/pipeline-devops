@@ -29,6 +29,7 @@ def call()
 }
 
 def buildAndTest()
+stage('Compile') 
 {
     sh './gradlew clean build'
 }
@@ -52,7 +53,7 @@ def rest()
 }
 //def downloadNexus()
 //{
-//    sh 'curl -X GET -u admin:maricel http://localhost:8081/repository/test-nexus/com/devopsusach2020/DevOpsUsach2020/1.0.0/DevOpsUsach2020-1.0.0.jar -O'
+//    sh "curl -X GET -u admin:maricel GET http://localhost:8081/repository/test-nexus/com/devopsusach2020/DevOpsUsach2020/1.0.0/DevOpsUsach2020-1.0.0.jar -O'
 //}
 //def runDownloadedJar()
 //{

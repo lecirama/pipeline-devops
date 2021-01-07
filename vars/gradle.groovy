@@ -34,6 +34,7 @@ stage('Compile')
     sh './gradlew clean build'
 }
 def sonar()
+stage('Sonar') 
 {
     def scannerHome = tool 'sonar';
     withSonarQubeEnv('sonar')

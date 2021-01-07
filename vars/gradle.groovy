@@ -30,12 +30,12 @@ def call()
 
 stage('Compile')
 def buildAndTest()
-
 {
     sh './gradlew clean build'
 }
-def sonar()
+
 stage('Sonar') 
+def sonar()
 {
     def scannerHome = tool 'sonar';
     withSonarQubeEnv('sonar')

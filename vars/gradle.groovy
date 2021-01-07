@@ -1,5 +1,4 @@
 
-import pipeline.*
 def call()
 {
     figlet 'Gradle'

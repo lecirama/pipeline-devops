@@ -7,10 +7,8 @@ def call()
     def CI = ['buildAndTest','sonar','runJar', 'rest','nexusCI']
     def CD = ['downloadNexus','runDoenloadedJar','rest','nexusCD']
 
-    Strimg rama = sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim(); //asignacion rama actual
-    Boolean rama_boolean = ((rama.index0f('feature')>0) || (rama.index0f('develop')>0));
     
-    if (rama_boolean == true)
+    if (rama == 'feature')
     {
         figlet 'Continuos Integration'
         buildAndTest()

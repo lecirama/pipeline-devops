@@ -50,14 +50,14 @@ def rest()
     sleep (15)
     sh "curl -X GET http://localhost:8086/rest/mscovid/test?msg=testing"
 }
-def downloadNexus()
-{
-    sh 'curl -X GET -u admin:maricel http://localhost:8081/repository/test-nexus/com/devopsusach2020/DevOpsUsach2020/1.0.0/DevOpsUsach2020-1.0.0.jar -O'
-}
-def runDownloadedJar()
-{
-    sh "java -jar DevOpsUsach2020-0.0.1.jar &"
-    sleep (10)
+//def downloadNexus()
+//{
+//    sh 'curl -X GET -u admin:maricel http://localhost:8081/repository/test-nexus/com/devopsusach2020/DevOpsUsach2020/1.0.0/DevOpsUsach2020-1.0.0.jar -O'
+//}
+//def runDownloadedJar()
+//{
+//    sh "java -jar DevOpsUsach2020-0.0.1.jar &"
+//    sleep (10)
 }
 def nexusCI()
 {

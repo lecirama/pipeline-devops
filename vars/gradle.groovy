@@ -43,6 +43,7 @@ stage('Sonar')
     }
 }
 def runJar()
+stage('Run')
 {
     sh "nohup bash gradlew bootRun &"
     sleep(10)
@@ -50,7 +51,7 @@ def runJar()
 def rest()
 {    
     sleep (15)
-    sh "curl -X GET http://localhost:8086/rest/mscovid/test?msg=testing"
+    sh 'curl -X GET http://localhost:8086/rest/mscovid/test?msg=testing'
 }
 //def downloadNexus()
 //{

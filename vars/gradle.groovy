@@ -2,6 +2,7 @@ import pipeline.*
 def call()
 {
     figlet 'Gradle'
+    rama = GIT_BRANCH
 
     def CI = ['buildAndTest','sonar','runJar', 'rest','nexusCI']
     def CD = ['downloadNexus','runDoenloadedJar','rest','nexusCD']

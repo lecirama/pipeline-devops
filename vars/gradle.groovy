@@ -9,7 +9,7 @@ def call()
     Strimg rama = sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim(); //asignacion rama actual
     Boolean rama_boolean = ((rama.index0f('feature')>0) || (rama.index0f('develop')>0));
     
-    if (rama == true)
+    if (rama_boolean == true)
     {
         figlet 'Continuos Integration'
         buildAndTest()

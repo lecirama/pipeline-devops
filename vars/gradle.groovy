@@ -7,7 +7,7 @@ def call()
     def CI = ['buildAndTest','sonar','runJar', 'rest','nexusCI']
     def CD = ['downloadNexus','runDoenloadedJar','rest','nexusCD']
 
-    Strimg rama = sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim();] //asignacion rama actual
+    Strimg rama = sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim(); //asignacion rama actual
     if rama =='feature'
     {
         figlet 'Continuos Integration'

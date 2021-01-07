@@ -28,8 +28,9 @@ def call()
     }
 }
 
+stage('Compile')
 def buildAndTest()
-stage('Compile') 
+
 {
     sh './gradlew clean build'
 }

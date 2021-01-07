@@ -27,14 +27,11 @@ def call()
 
     }
 }
-
-stage('Compile')
 def buildAndTest()
 {
+    figlet 'Build'
     sh './gradlew clean build'
 }
-
-stage('Sonar') 
 def sonar()
 {
     def scannerHome = tool 'sonar';
@@ -44,7 +41,6 @@ def sonar()
     }
 }
 def runJar()
-stage('Run')
 {
     sh "nohup bash gradlew bootRun &"
     sleep(10)
